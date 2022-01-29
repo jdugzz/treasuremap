@@ -1,17 +1,27 @@
 row1 = ["⬜️","⬜️","⬜️"]
 row2 = ["⬜️","⬜️","⬜️"]
 row3 = ["⬜️","⬜️","⬜️"]
-map = [row1, row2, row3]
-print(f"{row1}\n{row2}\n{row3}")
-position = input("Where do you want to put the treasure? ")
+map = [row1, row2, row3] #creates the actual map 
+print(f"{row1}\n{row2}\n{row3}") #puts map into a position where user can see it 
+position = input("Where do you want to put the treasure? ") #starting input
 
 
 
 
-horizontal = int(position[0])
-vertical = int(position[1])
+horizontal = int(position[0]) #creates horizontal variable to be manipulated
+vertical = int(position[1]) #creates vertical vairable to be manipulated
 
-selected_row = map[vertical - 1]
-selected_row[horizontal - 1] = "X"
+#the int([position[]) code will select the integer from input and use that to determine the position
 
-print(f"{row1}\n{row2}\n{row3}")
+if horizontal == 0 and vertical == 0:
+  print("This is an invalid input.")
+  
+  #this is done b/c 00 input will render same result as 33 input
+  
+else:
+  selected_row = map[vertical - 1] # creates vertical variable
+  selected_row[horizontal - 1] = "X" # creates horizontal variable
+
+#-1 is b/c humans start at 1, as opposed to the computer count start at 0
+
+  print(f"{row1}\n{row2}\n{row3}")
